@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function AppButton(props: { children: any }) {
+export default function AppButton(props: { children?: any }) {
     return (
-        <button style={{ color: 'green', background: 'yellow' }}>{props.children}</button>
+        <button
+            style={{ color: 'green', background: 'yellow' }}>
+            {props.children}
+        </button>
     )
 }

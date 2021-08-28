@@ -26,7 +26,7 @@ yarn create vite my-react-app --template react-ts
 
 Add packages to project:
 ```bash
-yarn add --dev jest @testing-library/jest-dom react-test-renderer @types/react-test-renderer babel-preset-react-app
+yarn add --dev jest @testing-library/jest-dom @testing-library/react react-test-renderer @types/react-test-renderer babel-preset-react-app
 ```
 
 ## Add babel config file `babel.config.json` in root folder
@@ -91,5 +91,7 @@ Run test: `yarn test`
 
 ## References
 [Getting Started With React using Vite.js](https://pranshushah.tech/getting-started-with-react-using-vitejs)
+
+https://www.valentinog.com/blog/testing-react/
 
 ## To be continue...
