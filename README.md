@@ -14,13 +14,15 @@ yarn create vite my-react-app --template react-ts
 ```
 
 ## Dev dependencies
-- jest
+- [jest](https://jestjs.io/)
 
-- @testing-library/jest-dom
+- [@testing-library/jest-dom](https://github.com/testing-library/jest-dom)
 
-- react-test-renderer @types/react-test-renderer (for typescript)
+- [react-test-renderer](https://reactjs.org/docs/test-renderer.html) @types/react-test-renderer (for typescript)
 
 - babel-preset-react-app
+
+- [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro)
 
 Add packages to project:
 ```bash
@@ -46,6 +48,9 @@ yarn add --dev jest @testing-library/jest-dom react-test-renderer @types/react-t
     "roots": [
         "<rootDir>/src"
     ],
+    "setupFilesAfterEnv": [
+        "<rootDir>/jest/jest.setup.ts"
+    ],
     "testMatch": [
         "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
         "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
@@ -54,6 +59,17 @@ yarn add --dev jest @testing-library/jest-dom react-test-renderer @types/react-t
     "resetMocks": true
 }
 ```
+
+## Add jest setup file
+Create `jest.setup.ts` file on `jest` folder from root
+```typescript
+import '@testing-library/jest-dom';
+```
+
+This will append content of this file to test file before run test.
+
+Now, you don't need import `@testing-library/jest-dom` for each test file.
+
 ## Add script test to run test with command: `yarn test`
 Open *package.json* and add new script:
 ```json
@@ -75,7 +91,5 @@ Run test: `yarn test`
 
 ## References
 [Getting Started With React using Vite.js](https://pranshushah.tech/getting-started-with-react-using-vitejs)
-
-[Using @testing-library/jest-dom](https://github.com/testing-library/jest-dom)
 
 ## To be continue...
