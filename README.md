@@ -27,7 +27,7 @@ Add packages to project:
 yarn add --dev jest @testing-library/jest-dom react-test-renderer @types/react-test-renderer babel-preset-react-app
 ```
 
-## Add babel config file `babel.config.json`
+## Add babel config file `babel.config.json` in root folder
 ```json
 {
     "env": {
@@ -40,7 +40,7 @@ yarn add --dev jest @testing-library/jest-dom react-test-renderer @types/react-t
 }
 ```
 
-## Add jest config file `jest.config.json`
+## Add jest config file `jest.config.json` in root folder
 ```json
 {
     "roots": [
