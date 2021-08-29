@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom"
 import { sum } from "../sum";
 
 test('should equal 3', () => {
