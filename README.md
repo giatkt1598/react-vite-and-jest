@@ -1,5 +1,5 @@
 ## Description
-Demo unit test with react + vitejs + jest.
+Demo unit test with react + vitejs + jest + typescript.
 
 ## Init project using vitejs
 ```bash
@@ -18,25 +18,32 @@ yarn create vite my-react-app --template react-ts
 
 - [@testing-library/jest-dom](https://github.com/testing-library/jest-dom)
 
-- babel-preset-react-app
+- babel-preset-react-app (instead of @babel/preset-env and @babel/preset-react)
 
 - [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro)
 
+- @babel/preset-typescript
+
 Add packages to project:
 ```bash
-yarn add --dev jest @testing-library/jest-dom @testing-library/react babel-preset-react-app
+yarn add --dev jest @testing-library/jest-dom @testing-library/react babel-preset-react-app @babel/preset-typescript
 ```
 
 ## Add babel config file `babel.config.json` in root folder
 ```json
 {
-    "env": {
-        "test": {
-            "presets": [
-                "react-app"
-            ]
-        }
-    }
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+    ]
 }
 ```
 
